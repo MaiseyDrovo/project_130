@@ -343,8 +343,8 @@ main {
 }
 .directions_zayavka::after {
     content: "";
-    width: 4px;
-    height: 8px;
+    width: 8px;
+    height: 4px;
     background-image: url(images/arrow.svg);
     transform: rotate(270deg);
 }
