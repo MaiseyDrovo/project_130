@@ -338,6 +338,15 @@ main {
     font-size: 14px;
     font-weight: 400;
     color: #2F28F0;
+    display: flex;
+    align-items: center;
+}
+.directions_zayavka::after {
+    content: "";
+    width: 4px;
+    height: 8px;
+    background-image: url(images/arrow.svg);
+    transform: rotate(270deg);
 }
 
 .card_shk {
