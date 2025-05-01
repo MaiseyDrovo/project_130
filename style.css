@@ -359,11 +359,32 @@ main {
     gap: 10px;
     flex-direction: column;
 }
+.drop {
+    border: none;
+    background: none;
+}
 .drop_title {
     color: #2F28F0;
     display: flex;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
+    
+    font-family: "Montserrat";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 157%;
+}
+.drop_title:hover {
+    background: linear-gradient(90deg ,#EE0979, #FF0000 45%, #FF6A00);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* .drop_title::after:hover {
+    поменять цвет
+} */
+.drop_info {
+    display: none;
 }
 
 .drop_title::after {
@@ -371,7 +392,13 @@ main {
     width: 8px;
     height: 4px;
     background-image: url(images/arrow.svg);
-    /* transform: rotate(180deg); */
+}
+
+.open .drop_info {
+    display: block;
+}
+.open .drop_title::after {
+    transform: rotate(180deg);
 }
 
 
