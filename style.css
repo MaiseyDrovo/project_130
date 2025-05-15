@@ -17,6 +17,9 @@
     width: 1176px;
     margin: auto;
 }
+body {
+    overflow-x: hidden;
+}
 
 
 
@@ -29,12 +32,13 @@
     height: 570px;
     position: relative;
     margin-top: 150px;
+    justify-content: center;
 }
 h1 {
     font-family: "DelaGothicOne";
     font-size: 128px;
     text-align: center;
-    width: 1176px;
+    /* width: 1176px; */
     z-index: 1;
 }
 .cloud {
@@ -161,7 +165,7 @@ main {
     background-repeat: no-repeat;
 }
 .event_top {
-    width: 711px;
+    width: 100%;
     height: 309px;
 }
 .event .text {
@@ -257,6 +261,9 @@ main {
     position: relative;
     padding: 25px;
 }
+.history_all {
+    position: relative;
+}
 .history_information {
     width: 826px;
     display: flex;
@@ -265,8 +272,9 @@ main {
 }
 .history_image {
     position: absolute;
-    right: 0;
+    right: calc(-374px / 2);
     top: 0;
+    border-radius: calc(374px / 2);
 }
 
 
@@ -284,6 +292,8 @@ main {
     display: flex;
     flex-direction: row;
     gap: 25px;
+
+    flex-wrap: wrap;
 }
 
 
@@ -295,7 +305,7 @@ main {
     box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 12px;
-    width: 280px;
+    width: calc((100% - 75px)/4 - 24px);
     height: 406px;
     justify-content: space-between;
     display: flex;
@@ -337,9 +347,17 @@ main {
     font-family: "Montserrat";
     font-size: 14px;
     font-weight: 400;
-    color: #2F28F0;
+    /* color: #2F28F0 !important; */
     display: flex;
     align-items: center;
+    gap: 5px;
+    /* cursor: pointer; */
+    width: fit-content;
+    /* text-decoration: none; */
+}
+.directions_zayavka a {
+    color: #2F28F0;
+    text-decoration: none;
 }
 .directions_zayavka::after {
     content: "";
@@ -348,9 +366,17 @@ main {
     background-image: url(images/arrow.svg);
     transform: rotate(270deg);
 }
+.directions_zayavka:hover {
+    background: linear-gradient(90deg ,#EE0979, #FF0000 45%, #FF6A00);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.directions_zayavka:hover::after {
+    background-image: url(images/arrow_active.svg);
+}
 
 .card_shk {
-    width: calc( (100% - 25px)/2 );
+    width: calc((100% - 25px)/2 - 24px);
     height: fit-content;
     gap: 10px;
 }
@@ -380,11 +406,15 @@ main {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-/* .drop_title::after:hover {
-    поменять цвет
-} */
+.drop_title:hover::after {
+    background-image: url(images/arrow_active.svg);
+}
 .drop_info {
-    display: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    will-change: max-height;
+    transition: all 0.3s ease-out;
 }
 
 .drop_title::after {
@@ -395,10 +425,10 @@ main {
 }
 
 .open .drop_info {
-    display: block;
+    opacity: 1;
 }
 .open .drop_title::after {
-    transform: rotate(180deg);
+    transform: scaley(-1);
 }
 
 
@@ -420,6 +450,13 @@ main {
     -webkit-text-fill-color: transparent;
     width: fit-content;
 }
+/* .links::after {
+    content: "";
+    width: 8px;
+    height: 4px;
+    background-image: url(images/arrow_active.svg);
+    transform: rotate(270deg);
+} */
 .link div {
     display: flex;
     flex-direction: column;

@@ -34,9 +34,11 @@ document.addEventListener("DOMContentLoaded", function() {
           if (self.classList.contains('open')) {
             drop.setAttribute('aria-expended', true);
             drop_info.setAttribute('aria-hidden', false);
+            drop_info.style.maxHeight = drop_info.scrollHeight + 'px';
           } else {
             drop.setAttribute('aria-expended', false);
             drop_info.setAttribute('aria-hidden', true);
+            drop_info.style.maxHeight = null;
           }
         })
       })
