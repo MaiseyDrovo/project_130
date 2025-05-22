@@ -14,13 +14,9 @@
     padding: 0;}
 
 .container {
-    width: 1176px;
+    max-width: 1176px;
     margin: auto;
 }
-body {
-    overflow-x: hidden;
-}
-
 
 
 
@@ -38,7 +34,6 @@ h1 {
     font-family: "DelaGothicOne";
     font-size: 128px;
     text-align: center;
-    /* width: 1176px; */
     z-index: 1;
 }
 .cloud {
@@ -49,6 +44,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 75px;
+    overflow: hidden;
 }
 .cloud_1 {
     top: 199px;
@@ -82,6 +78,7 @@ main {
 
 
 .events {
+    width: calc(100% - 50px);
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -265,10 +262,12 @@ main {
     position: relative;
 }
 .history_information {
-    width: 826px;
+    max-width: 826px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    width: calc(100% - (560px - (374px / 2)));
 }
 .history_image {
     position: absolute;
@@ -310,6 +309,8 @@ main {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
+    
+    min-width: 250px;
 }
 .directions_info {
     display: flex;
@@ -434,6 +435,7 @@ main {
 
 
 
+
 .link {
     display: flex;
     flex-direction: column;
@@ -461,4 +463,44 @@ main {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .events .info {
+        flex-direction: column;
+    }
+    .swiper {
+        /* max-width: 400px; */
+        width: 100%;
+    }
+    .color-calendar {
+        max-width: 100% !important;
+    }
+    .color-calendar_1 {
+        align-self: normal;
+    }
+    .history_information {
+        width: 100%;
+    }
+    .history_all {
+        flex-direction: column;
+    }
+    .history_image {
+        position: relative;
+        right: 0;
+        width: 100%;
+    }
+    h1 {
+        font-size: 64px;
+    }
+    .name {
+        font-size: 32px;
+    }
 }
