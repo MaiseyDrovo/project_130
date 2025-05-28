@@ -17,6 +17,14 @@
     max-width: 1176px;
     margin: auto;
 }
+html {
+    scroll-behavior: smooth;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
 
 
 
@@ -441,6 +449,7 @@ main {
     flex-direction: column;
     gap: 10px;
     padding: 25px;
+    width: 100%;
 }
 .links {
     font-family: "Montserrat";
@@ -464,6 +473,111 @@ main {
     flex-direction: column;
     gap: 5px;
 }
+
+
+
+
+
+
+footer {
+    background-color: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding: 25px 0 250px 0;
+}
+.footer_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1176px;
+    height: 60px;
+}
+.footer_top .khu_icon {
+    width: calc(100% * (150 / 1126));
+    height: calc(100% * (60 / 60));
+    background-image: url(images/logo_normal_white.svg);
+    background-size: cover;
+}
+.footer_top .up {
+    width: calc(100% * (60 / 1126));
+    height: calc(100% * (60 / 60));
+    background-image: url(images/up.svg);
+    background-size: cover;
+}
+.footer_link {
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 400;
+    color: #Ffffff;
+    text-decoration: none;
+}
+.footer_line {
+    width: 100%;
+    height: 1px;
+    background-color: #8d8d8d;
+    max-width: 1176px;
+}
+.footer_all_1 .footer_line {
+    height: 0.5px;
+}
+.footer_link:hover {
+    background: linear-gradient(90deg ,#EE0979, #FF0000 45%, #FF6A00);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.footer_all {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-bottom: 25px;
+    width: 100%;
+    max-width: 1176px;
+    justify-content: space-between;
+}
+.footer_all_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.footer_all_1 div {
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+}
+.footer_all_2 {
+    width: 50%;
+}
+.footer_all_3 {
+    width: calc(100% * (200 / 1126));
+}
+.footer_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1176px;
+}
+.footer_bottom div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.adm {
+    font-family: "Montserrat";
+    font-size: 11px;
+    font-weight: 400;
+    color: #8d8d8d;
+}
+.adm2 {
+    width: 50%;
+}
+.adm3 {
+    width: calc(100% * (200 / 1126));
+}
+
 
 
 
