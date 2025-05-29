@@ -1,21 +1,67 @@
 document.addEventListener("DOMContentLoaded", function() {
-    new Calendar({
+  var autoEvent = false;
+
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      loop: false,
+    });
+    
+    const calendar = new Calendar({
         id: "#color-calendar",
         calendarSize: "large",
         layoutModifiers: ['month-left-align'],
         headerBackgroundColor: "#F2F2F2",
         disableMonthYearPickers: true,
-      });
-
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+        eventsData: [
+          {
+            id: 1,
+            name: "French class",
+            start: "2025-05-25T06:00:00",
+            end: "2020-05-25T20:30:00"
+          },
+          {
+            id: 2,
+            name: "Blockchain 101",
+            start: "2025-05-28T10:00:00",
+            end: "2025-05-28T11:30:00"
+          },
+          {
+            id: 0,
+            name: "Cheese 101",
+            start: "2025-05-24T10:00:00",
+            end: "2025-05-24T11:30:00"
+          }
+        ],
+        dateChanged: (currentDate, events) => {
+          if(events[0]) {
+            if(!autoEvent){
+              autoEvent=true;
+              swiper.slideTo(events[0].id, 1000);
+            }
+            else {
+              autoEvent = false;
+            }
+          }
         },
-        loop: false,
       });
 
+      calendar.setDate(new Date('2025-05-24'));
+
+      
+    swiper.on('slideChange', function () {
+      if(!autoEvent){
+        var dateEvent = swiper.slides[swiper.activeIndex];
+        autoEvent = true;
+        calendar.setDate(new Date(dateEvent.dataset.date));
+      }
+      else {
+        autoEvent = false;
+      }
+    });
 
 
       let drop_control = document.querySelectorAll('.drop_control');
