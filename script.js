@@ -18,23 +18,23 @@ document.addEventListener("DOMContentLoaded", function() {
         disableMonthYearPickers: true,
         eventsData: [
           {
+            id: 0,
+            name: "Cheese 101",
+            start: "2025-06-24T18:00:00",
+            end: "2025-06-24T18:30:00"
+          },
+          {
             id: 1,
             name: "French class",
-            start: "2025-05-25T06:00:00",
-            end: "2020-05-25T20:30:00"
+            start: "2025-06-25T12:00:00",
+            end: "2020-06-25T12:30:00"
           },
           {
             id: 2,
             name: "Blockchain 101",
-            start: "2025-05-28T10:00:00",
-            end: "2025-05-28T11:30:00"
+            start: "2025-06-28T17:00:00",
+            end: "2025-06-28T17:30:00"
           },
-          {
-            id: 0,
-            name: "Cheese 101",
-            start: "2025-05-24T10:00:00",
-            end: "2025-05-24T11:30:00"
-          }
         ],
         dateChanged: (currentDate, events) => {
           if(events[0]) {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
       });
 
-      calendar.setDate(new Date('2025-05-24'));
+      calendar.setDate(new Date('2025-06-24'));
 
       
     swiper.on('slideChange', function () {
