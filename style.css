@@ -661,10 +661,10 @@ footer {
 .footer_all_1 div {
     display: flex;
     flex-direction: row;
-    gap: 75px;
+    gap: 10px 75px;
 }
 .footer_all_2 {
-    width: 50%;
+    width: calc(50% - 100px);
 }
 .footer_all_3 {
     width: calc(100% * (200 / 1126));
@@ -745,5 +745,14 @@ footer {
     }
     .card {
         height: fit-content;
+    }
+    .footer_all {
+        gap: 10px;
+    }
+    .footer_all_2 {
+        width: calc(50% - 20px);
+    }
+    .footer_link .other, .footer_link .there {
+        width: min-content;
     }
 }
