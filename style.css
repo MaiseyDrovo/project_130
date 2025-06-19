@@ -37,18 +37,26 @@ body {
 header {
     position: fixed;
     z-index: 102;
-    width: 100%;
+    width: 96%;
+    padding: 0 2%;
     top: 10px;
 }
 .header_all {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #F2F2F2;
+    /* background-color: #F2F2F2; */
+    background-color: #Ffffff;
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
-    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25); */
     flex-wrap: wrap;
+}
+.fon {
+    /* background-color: #F2F2F2; */
+    /* background-color: #Ffffff; */
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
+    /* transition: all 0.3s ease-out; */
 }
 .header_links, .header_nav {
     display: flex;
@@ -177,6 +185,12 @@ main {
     font-weight: bold;
     font-size: 24px;
 }
+/* .top .name_mini, .top .name_mini p {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-wrap: nowrap;
+} */
 .event .name_mini {
     width: calc(100% - 100px);
     line-height: 90%;
@@ -749,6 +763,10 @@ footer {
 
 
 
+
+
+
+
 @media (max-width: 921px) {
     .card {
         width: calc((100% - 25px) / 2 - 24px);
@@ -761,6 +779,14 @@ footer {
     }
     .cloud_3 {
         right: 20px;
+    }
+    .links::after {
+        flex-shrink: 0;
+    }
+    .links {
+        align-items: baseline;
+        width: 100%;
+        justify-content: space-between;
     }
 }
 
@@ -801,11 +827,20 @@ footer {
         height: fit-content;
         width: 100%;
     }
+    footer {
+        padding: 20px;
+        gap: 50px;
+    }
     .footer_all {
-        gap: 10px;
+        gap: 50px;
+        flex-direction: column;
+    }
+    .footer_all_1 {
+        width: 100%;
     }
     .footer_all_2 {
-        width: calc(50% - 20px);
+        /* width: calc(50% - 20px); */
+        gap: 13.5px;
     }
     .footer_link .other, .footer_link .there {
         width: min-content;
@@ -819,9 +854,9 @@ footer {
     .adm2 {
         width: calc(50% - 20px);
     }
-    .footer_all_3, .footer_all_4 {
+    /* .footer_all_3, .footer_all_4 {
         width: calc(25%);
-    }
+    } */
 
     
     .cloud_2 {
@@ -835,6 +870,9 @@ footer {
         left: 25px;
     }
     .cloud_6 {
+        display: none;
+    }
+    .need_hide {
         display: none;
     }
 }
