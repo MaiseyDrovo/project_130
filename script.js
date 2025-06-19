@@ -20,20 +20,20 @@ document.addEventListener("DOMContentLoaded", function() {
           {
             id: 0,
             name: "Cheese 101",
-            start: "2025-06-24T18:00:00",
-            end: "2025-06-24T18:30:00"
+            start: "2025-04-16T15:00:00",
+            end: "2025-04-16T16:30:00"
           },
           {
             id: 1,
             name: "French class",
-            start: "2025-06-25T12:00:00",
-            end: "2020-06-25T12:30:00"
+            start: "2025-04-27T10:00:00",
+            end: "2020-04-27T11:30:00"
           },
           {
             id: 2,
             name: "Blockchain 101",
-            start: "2025-06-28T17:00:00",
-            end: "2025-06-28T17:30:00"
+            start: "2025-06-02T12:00:00",
+            end: "2025-06-02T13:30:00"
           },
         ],
         dateChanged: (currentDate, events) => {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
       });
 
-      calendar.setDate(new Date('2025-06-24'));
+      calendar.setDate(new Date('2025-04-16'));
 
       
     swiper.on('slideChange', function () {
