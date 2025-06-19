@@ -88,4 +88,18 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         })
       })
+
+ 
+      const header = document.querySelector('.header_all')
+      
+      window.addEventListener("scroll", function(params) {
+        let posTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        if (posTop >= 100) {
+          header.classList.add('fon')
+          header.style.transition = 'all 0.3s ease-out';
+        } else {
+          header.classList.remove('fon')
+          header.style.transition = 'all 0.3s ease-out';
+        }
+      })
 })
